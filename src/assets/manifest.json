@@ -1,0 +1,7 @@
+{
+  "name": "mui-styleguide-demo",
+  "short_name": "mui-styleguide-demo",
+  "description": "demo page for mui-styleguide",
+  "start_url": "./?manifest=true",
+  "display": "standalone"
+}

@@ -4,3 +4,6 @@ export * from './MuiInputContainer';
 export * from './MuiInputsGuide';
 export * from './MuiRadioGuide';
 export * from './MuiSelectGuide';
+export * from './MuiSliderGuide';
+export * from './MuiSwitchGuide';
+export * from './MuiTextFieldGuide';

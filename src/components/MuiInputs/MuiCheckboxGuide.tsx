@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Typography, Checkbox, FormControlLabel } from '@material-ui/core';
+import { Typography, Checkbox, FormControlLabel, FormGroup } from '@material-ui/core';
 import { MuiInputContainer } from './MuiInputContainer';
 export const MuiCheckboxGuide = () => {
   const [checked, setChecked] = React.useState(true);
@@ -20,35 +20,32 @@ export const MuiCheckboxGuide = () => {
         <FormControlLabel control={<Checkbox defaultChecked indeterminate />} label="Indeterminate"/>
         <FormControlLabel control={<Checkbox defaultChecked color="default" />} label="Default"/>
         <FormControlLabel control={<Checkbox defaultChecked size="small"/>} label="Small" />
-      </MuiInputContainer>
-      <Typography variant="h5" gutterBottom>
-      Label Placement
-      </Typography>
-      <MuiInputContainer>
-            <FormControlLabel
-              value="top"
-              control={<Checkbox color="primary" />}
-              label="Top"
-              labelPlacement="top"
-            />
-            <FormControlLabel
-              value="start"
-              control={<Checkbox color="primary" />}
-              label="Start"
-              labelPlacement="start"
-            />
-            <FormControlLabel
-              value="bottom"
-              control={<Checkbox color="primary" />}
-              label="Bottom"
-              labelPlacement="bottom"
-            />
-            <FormControlLabel
-              value="end"
-              control={<Checkbox color="primary" />}
-              label="End"
-              labelPlacement="end"
-            />
+        <FormGroup style={{justifyContent: 'center'}} aria-label="position" row>
+          <FormControlLabel
+            value="top"
+            control={<Checkbox color="primary" />}
+            label="Top"
+            labelPlacement="top"
+          />
+          <FormControlLabel
+            value="start"
+            control={<Checkbox color="primary" />}
+            label="Start"
+            labelPlacement="start"
+          />
+          <FormControlLabel
+            value="bottom"
+            control={<Checkbox color="primary" />}
+            label="Bottom"
+            labelPlacement="bottom"
+          />
+          <FormControlLabel
+            value="end"
+            control={<Checkbox color="primary" />}
+            label="End"
+            labelPlacement="end"
+          />
+        </FormGroup>
       </MuiInputContainer>
     </>
   );

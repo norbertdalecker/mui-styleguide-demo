@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Typography, Divider } from '@material-ui/core';
-import { MuiButtonsGuide, MuiCheckboxGuide, MuiRadioGuide, MuiSelectGuide } from 'components/MuiInputs';
+import { MuiButtonsGuide, MuiCheckboxGuide, MuiRadioGuide, MuiSelectGuide, MuiSliderGuide, MuiSwitchGuide, MuiTextFieldGuide } from 'components/MuiInputs';
 
 export const MuiInputsGuide = () => {
   return (
@@ -13,6 +13,9 @@ export const MuiInputsGuide = () => {
       <MuiCheckboxGuide/>
       <MuiRadioGuide/>
       <MuiSelectGuide/>
+      <MuiSliderGuide/>
+      <MuiSwitchGuide/>
+      <MuiTextFieldGuide/>
     </>
   );
 }

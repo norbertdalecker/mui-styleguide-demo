@@ -8,21 +8,15 @@ export const MuiLinkGuide = () => {
       Links
       </Typography>
       <MuiInputContainer>
-      <Typography>
         <Link href="#">
           Link
         </Link>
-      <Typography>
-      </Typography>
         <Link href="#" color="inherit">
           {'color="inherit"'}
         </Link>
-      <Typography>
-      </Typography>
         <Link href="#" variant="body2">
           {'variant="body2"'}
         </Link>
-      </Typography>
       </MuiInputContainer>
     </>
   );

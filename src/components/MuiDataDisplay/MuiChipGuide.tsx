@@ -8,7 +8,7 @@ export const MuiChipGuide = () => {
       Chip
       </Typography>
       <MuiInputContainer>
-      {['small', 'outlined'].map((size: 'small' | 'small')=>{
+      {['small', 'medium'].map((size: 'small' | 'small')=>{
         return ['default', 'outlined'].map((variant: 'default' | 'outlined')=>{
           return ['primary', 'secondary', 'default'].map((color: PropTypes.Color)=>{
             return (

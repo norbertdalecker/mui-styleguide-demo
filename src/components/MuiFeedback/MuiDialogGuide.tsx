@@ -9,7 +9,7 @@ export const MuiDialogGuide = () => {
       </Typography>
       <MuiInputContainer>
       <DialogTitle id="customized-dialog-title">
-        <Typography variant="h6">Modal title</Typography>
+        Modal title
       </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">

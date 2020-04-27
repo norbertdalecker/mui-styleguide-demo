@@ -18,13 +18,13 @@ export const MuiSelectGuide = () => {
     setValue(event.target.value as string);
   };
   const classes = useStyles();
-  const getMenuItems = () => [
-    <MenuItem value="">
+  const getMenuItems = (keyPrefix: string) => [
+    <MenuItem key={keyPrefix+0} value="">
       <em>None</em>
     </MenuItem>,
-    <MenuItem value={10}>Ten</MenuItem>,
-    <MenuItem value={20}>Twenty</MenuItem>,
-    <MenuItem value={30}>Thirty</MenuItem>,
+    <MenuItem key={keyPrefix+1} value={10}>Ten</MenuItem>,
+    <MenuItem key={keyPrefix+2} value={20}>Twenty</MenuItem>,
+    <MenuItem key={keyPrefix+3} value={30}>Thirty</MenuItem>,
   ]
   return (
     <>
@@ -39,7 +39,7 @@ export const MuiSelectGuide = () => {
           value={value}
           onChange={handleChange}
         >
-          {getMenuItems()}
+          {getMenuItems("simple-label")}
         </Select>
       </FormControl>
       <FormControl className={classes.formControl}>
@@ -49,13 +49,13 @@ export const MuiSelectGuide = () => {
           value={value}
           onChange={handleChange}
         >
-          {getMenuItems()}
+          {getMenuItems("simple-helper-label")}
         </Select>
         <FormHelperText>Some important helper text</FormHelperText>
       </FormControl>
       <FormControl className={classes.formControl}>
         <Select value={value} onChange={handleChange} displayEmpty className={classes.selectEmpty}>
-          {getMenuItems()}
+          {getMenuItems("empy-helper")}
         </Select>
         <FormHelperText>Without label</FormHelperText>
       </FormControl>
@@ -70,7 +70,7 @@ export const MuiSelectGuide = () => {
           displayEmpty
           className={classes.selectEmpty}
         >
-          {getMenuItems()}
+          {getMenuItems("simple-placeholder-label")}
         </Select>
         <FormHelperText>Label + placeholder</FormHelperText>
       </FormControl>
@@ -81,7 +81,7 @@ export const MuiSelectGuide = () => {
           value={value}
           onChange={handleChange}
         >
-          {getMenuItems()}
+          {getMenuItems("simple-disabled-label")}
         </Select>
         <FormHelperText>Disabled</FormHelperText>
       </FormControl>
@@ -93,7 +93,7 @@ export const MuiSelectGuide = () => {
           onChange={handleChange}
           renderValue={value => `⚠️  - ${value}`}
         >
-          {getMenuItems()}
+          {getMenuItems("simple-error-label")}
         </Select>
         <FormHelperText>Error</FormHelperText>
       </FormControl>
@@ -105,7 +105,7 @@ export const MuiSelectGuide = () => {
           onChange={handleChange}
           inputProps={{ readOnly: true }}
         >
-          {getMenuItems()}
+          {getMenuItems("simple-readonly-label")}
         </Select>
         <FormHelperText>Read only</FormHelperText>
       </FormControl>
@@ -117,7 +117,7 @@ export const MuiSelectGuide = () => {
           onChange={handleChange}
           autoWidth
         >
-          {getMenuItems()}
+          {getMenuItems("simple-autowidth-label")}
         </Select>
         <FormHelperText>Auto width</FormHelperText>
       </FormControl>
@@ -126,7 +126,7 @@ export const MuiSelectGuide = () => {
           <MenuItem value="" disabled>
             Placeholder
           </MenuItem>
-          {getMenuItems()}
+          {getMenuItems("placeholder-empty")}
         </Select>
         <FormHelperText>Placeholder</FormHelperText>
       </FormControl>
@@ -138,7 +138,7 @@ export const MuiSelectGuide = () => {
           onChange={handleChange}
           className={classes.selectEmpty}
         >
-          {getMenuItems()}
+          {getMenuItems("simple-required-label")}
         </Select>
         <FormHelperText>Required</FormHelperText>
       </FormControl>
@@ -150,7 +150,7 @@ export const MuiSelectGuide = () => {
           onChange={handleChange}
           label="outlined"
         >
-          {getMenuItems()}
+          {getMenuItems("simple-outlined-label")}
         </Select>
       </FormControl>
       <FormControl variant="filled" className={classes.formControl}>
@@ -160,7 +160,7 @@ export const MuiSelectGuide = () => {
           value={value}
           onChange={handleChange}
         >
-          {getMenuItems()}
+          {getMenuItems("simple-filled-label")}
         </Select>
       </FormControl>
       </MuiInputContainer>

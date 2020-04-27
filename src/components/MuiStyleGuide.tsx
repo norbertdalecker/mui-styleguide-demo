@@ -11,15 +11,15 @@ import { MuiNavigationGuide } from 'components/MuiNavigation';
 export const MuiStyleGuide = () => {
   return (
     <Container maxWidth="lg">
-    <Paper style={{padding: '24px 16px 24px 16px'}}>
-      <MuiPaletteGuide/>
-      <MuiTypographyGuide/>
-      <MuiInputsGuide/>
-      <MuiFeedbackGuide/>
-      <MuiSurfacesGuide/>
-      <MuiNavigationGuide/>
-      <MuiDataDisplayGuide/>
-    </Paper>
+      <Paper style={{padding: '24px 16px 24px 16px'}}>
+        <MuiPaletteGuide/>
+        <MuiTypographyGuide/>
+        <MuiInputsGuide/>
+        <MuiFeedbackGuide/>
+        <MuiSurfacesGuide/>
+        <MuiNavigationGuide/>
+        <MuiDataDisplayGuide/>
+      </Paper>
     </Container>
   );
 }

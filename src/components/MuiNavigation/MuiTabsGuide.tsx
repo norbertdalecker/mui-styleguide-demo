@@ -31,7 +31,7 @@ export const MuiTabsGuide = () => {
           </Tabs>
         </AppBar>
         <AppBar position="static">
-          <Tabs variant="scrollable" scrollButtons="auto" centered value={0}>
+          <Tabs variant="scrollable" scrollButtons="auto" value={0}>
             <Tab label="Primary Scrollable"/>
             <Tab label="Primary Scrollable"/>
             <Tab label="Primary Scrollable"/>

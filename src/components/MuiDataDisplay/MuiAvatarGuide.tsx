@@ -42,12 +42,12 @@ export const MuiAvatarGuide = () => {
       Avatar
       </Typography>
       <MuiInputContainer>
-        <Typography gutterBottom>
+        <Typography component="div" gutterBottom>
         Variants
         <Box className={classes.root}>
         {['circle' , 'rounded' , 'square'].map((variant: 'circle' | 'rounded' | 'square')=> {
           return (
-            <Typography key={variant} gutterBottom>
+            <Typography component="div" key={variant} gutterBottom>
             {variant}
               <Avatar className={clsx(classes.large, classes.info)} variant={variant}>
                 N
@@ -56,7 +56,7 @@ export const MuiAvatarGuide = () => {
         })}
         </Box>
         </Typography>
-        <Typography gutterBottom>
+        <Typography component="div" gutterBottom>
         AvatarGroup
         <AvatarGroup max={4}>
           <Avatar className={clsx(classes.large, classes.info)} alt="Pic1">

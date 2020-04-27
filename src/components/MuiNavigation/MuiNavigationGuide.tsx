@@ -6,7 +6,7 @@ import { MuiBreadcrumbsGuide, MuiLinkGuide,
 export const MuiNavigationGuide = () => {
   return (
     <>
-      <Typography variant="h4">
+      <Typography id="Navigation" variant="h4">
       Navigation
       </Typography>
       <Divider/>

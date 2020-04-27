@@ -5,7 +5,7 @@ import { MuiColorsGuide, MuiBackgroundsGuide } from 'components/MuiPalette';
 export const MuiPaletteGuide = () => {
   return (
     <>
-      <Typography variant="h4">
+      <Typography id="Palette" variant="h4">
       Palette
       </Typography>
       <Divider/>

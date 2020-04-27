@@ -5,7 +5,7 @@ import { MuiButtonsGuide, MuiCheckboxGuide, MuiRadioGuide, MuiSelectGuide, MuiSl
 export const MuiInputsGuide = () => {
   return (
     <>
-      <Typography variant="h4">
+      <Typography id="Inputs" variant="h4">
       Inputs
       </Typography>
       <Divider/>

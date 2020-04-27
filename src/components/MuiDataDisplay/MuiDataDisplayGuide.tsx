@@ -6,7 +6,7 @@ import { MuiAvatarGuide, MuiBadgeGuide, MuiChipGuide,
 export const MuiDataDisplayGuide = () => {
   return (
     <>
-      <Typography variant="h4">
+      <Typography id="DataDisplay" variant="h4">
       Data Display
       </Typography>
       <Divider/>

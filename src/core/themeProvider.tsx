@@ -1,5 +1,40 @@
 import { ThemeOptions } from '@material-ui/core/styles';
-export const materialTheme: ThemeOptions = {
+const base: ThemeOptions = {
+  typography: {
+    h4: {
+      marginTop: '24px'
+    }
+  },
+  spacing: 8,
+  overrides: {
+    MuiDivider:{
+      root:{
+        marginBottom: 24,
+      }
+    }
+  }
+}
+export const darkTheme: ThemeOptions = Object.assign({},base,{
+  palette: {
+    type: 'dark',
+    primary: {
+      main: '#444444',
+    },
+    action:{
+      disabledBackground: '#121212',
+      hover: '#7c7c80'
+    },
+    divider: '#ffffff',
+    background:{
+      paper: '#212121',
+      default: '#7c7c80',
+    },
+    secondary:{
+      main: '#bf5808',
+    }
+  }
+});
+export const lightTheme: ThemeOptions = Object.assign({},base,{
   palette: {
     type: 'light',
     primary: {
@@ -19,18 +54,5 @@ export const materialTheme: ThemeOptions = {
       A400: '#049fff',
       A700: '#0090ea',
     },
-  },
-  typography: {
-    h4: {
-      marginTop: '24px'
-    }
-  },
-  spacing: 8,
-  overrides: {
-    MuiDivider:{
-      root:{
-        marginBottom: 24,
-      }
-    }
   }
-}
+});

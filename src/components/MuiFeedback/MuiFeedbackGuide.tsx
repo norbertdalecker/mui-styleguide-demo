@@ -5,7 +5,7 @@ import { MuiProgressGuide, MuiDialogGuide, MuiSnackBarGuide } from 'components/M
 export const MuiFeedbackGuide = () => {
   return (
     <>
-      <Typography variant="h4">
+      <Typography id="Feedback" variant="h4">
       Feedback
       </Typography>
       <Divider/>

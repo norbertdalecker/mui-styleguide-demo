@@ -7,7 +7,7 @@ import { MuiTypographyVariantsGuide,
 export const MuiTypographyGuide = () => {
   return (
     <>
-      <Typography variant="h4">
+      <Typography id="Typography" variant="h4">
       Typography
       </Typography>
       <Divider/>

@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Typography, Grid, Box } from '@material-ui/core';
+import { Typography, Box } from '@material-ui/core';
+import { MuiInputContainer } from 'components/MuiInputs';
 
 export const MuiTypographyFontsGuide = () => {
   return (
@@ -7,8 +8,8 @@ export const MuiTypographyFontsGuide = () => {
       <Typography variant="h5" gutterBottom>
       Fonts
       </Typography>
-      <Grid container spacing={2}>
-        <Typography component="div">
+      <MuiInputContainer>
+        <Typography variant="h6">
           <Box fontWeight="fontWeightLight" m={1}>
             Light
           </Box>
@@ -31,6 +32,6 @@ export const MuiTypographyFontsGuide = () => {
             Monospace
           </Box>
         </Typography>
-      </Grid>
+      </MuiInputContainer>
     </>);
 }

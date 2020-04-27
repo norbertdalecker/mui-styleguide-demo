@@ -31,11 +31,6 @@ export const materialTheme: ThemeOptions = {
       root:{
         marginBottom: 24,
       }
-    },
-    MuiPaper:{
-      rounded:{
-        padding: '24px 16px 24px 16px'
-      }
     }
   }
 }

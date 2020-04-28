@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Typography, ButtonGroup, Divider, Fab } from '@material-ui/core';
+import { Typography, ButtonGroup, Fab, PropTypes, Orientation } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -20,94 +20,73 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 export const MuiButtonsGuide = () => {
   const classes = useStyles();
+  const generateButtons = (variant: 'text' | 'outlined' | 'contained') => {
+    return (
+      <MuiInputContainer>
+        <Button variant={variant}>Default</Button>
+        <Button variant={variant} color="primary">
+          Primary
+        </Button>
+        <Button variant={variant} color="secondary">
+          Secondary
+        </Button>
+        <Button variant={variant} disabled>
+          Disabled
+        </Button>
+        <Button variant={variant} color="primary" href="#contained-buttons">
+          Link
+        </Button>
+      </MuiInputContainer>
+    );
+  }
+  const generateSizeButtons = (variant: 'text' | 'outlined' | 'contained') => {
+    return (
+      <div>
+        <Button variant={variant} size="small" className={classes.margin}>
+          Small
+        </Button>
+        <Button variant={variant} size="medium" className={classes.margin}>
+          Medium
+        </Button>
+        <Button variant={variant} size="large" className={classes.margin}>
+          Large
+        </Button>
+      </div>
+    );
+  }
+  const generateButtonGroup = (
+          size: 'small' | 'medium' | 'large', color: PropTypes.Color,
+          variant: 'text' | 'outlined' | 'contained', orientation: Orientation = "horizontal") => {
+    return (
+      <ButtonGroup orientation={orientation} size={size} variant={variant} color={color} aria-label={`${variant} ${color} button group`}>
+        <Button>{size}</Button>
+        <Button>{variant}</Button>
+        <Button>{color}</Button>
+      </ButtonGroup>
+    )
+  }
   return (
     <>
       <Typography variant="h5" gutterBottom>
       Contained Buttons
       </Typography>
-      <MuiInputContainer>
-        <Button variant="contained">Default</Button>
-        <Button variant="contained" color="primary">
-          Primary
-        </Button>
-        <Button variant="contained" color="secondary">
-          Secondary
-        </Button>
-        <Button variant="contained" disabled>
-          Disabled
-        </Button>
-        <Button variant="contained" color="primary" href="#contained-buttons">
-          Link
-        </Button>
-      </MuiInputContainer>
+      {generateButtons('contained')}
       <Typography variant="h5" gutterBottom>
       Text Buttons
       </Typography>
-      <MuiInputContainer>
-        <Button>Default</Button>
-        <Button color="primary">Primary</Button>
-        <Button color="secondary">Secondary</Button>
-        <Button disabled>Disabled</Button>
-        <Button href="#text-buttons" color="primary">
-          Link
-        </Button>
-      </MuiInputContainer>
+      {generateButtons('text')}
       <Typography variant="h5" gutterBottom>
       Outlined Buttons
       </Typography>
-      <MuiInputContainer>
-        <Button variant="outlined">Default</Button>
-        <Button variant="outlined" color="primary">
-          Primary
-        </Button>
-        <Button variant="outlined" color="secondary">
-          Secondary
-        </Button>
-        <Button variant="outlined" disabled>
-          Disabled
-        </Button>
-        <Button variant="outlined" color="primary" href="#outlined-buttons">
-          Link
-        </Button>
-      </MuiInputContainer>
+      {generateButtons('outlined')}
       <Typography variant="h5" gutterBottom>
       Button Sizes
       </Typography>
       <MuiInputContainer>
         <div>
-          <div>
-            <Button size="small" className={classes.margin}>
-              Small
-            </Button>
-            <Button size="medium" className={classes.margin}>
-              Medium
-            </Button>
-            <Button size="large" className={classes.margin}>
-              Large
-            </Button>
-          </div>
-          <div>
-            <Button variant="outlined" size="small" color="primary" className={classes.margin}>
-              Small
-            </Button>
-            <Button variant="outlined" size="medium" color="primary" className={classes.margin}>
-              Medium
-            </Button>
-            <Button variant="outlined" size="large" color="primary" className={classes.margin}>
-              Large
-            </Button>
-          </div>
-          <div>
-            <Button variant="contained" size="small" color="primary" className={classes.margin}>
-              Small
-            </Button>
-            <Button variant="contained" size="medium" color="primary" className={classes.margin}>
-              Medium
-            </Button>
-            <Button variant="contained" size="large" color="primary" className={classes.margin}>
-              Large
-            </Button>
-          </div>
+          {generateSizeButtons('text')}
+          {generateSizeButtons('outlined')}
+          {generateSizeButtons('contained')}
           <div>
             <IconButton aria-label="delete" className={classes.margin} size="small">
               <ArrowDownwardIcon fontSize="inherit" />
@@ -128,71 +107,23 @@ export const MuiButtonsGuide = () => {
       Basic Button groups
       </Typography>
       <MuiInputContainer>
-        <ButtonGroup color="primary" aria-label="outlined primary button group">
-          <Button>outlined</Button>
-          <Button>primary</Button>
-          <Button>button</Button>
-        </ButtonGroup>
-        <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group">
-          <Button>contained</Button>
-          <Button>primary</Button>
-          <Button>button</Button>
-        </ButtonGroup>
-        <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-          <Button>text</Button>
-          <Button>primary</Button>
-          <Button>button</Button>
-        </ButtonGroup>
-        <Divider/>
-        <ButtonGroup size="small" aria-label="small outlined button group">
-          <Button>small</Button>
-          <Button>outlined</Button>
-          <Button>primary</Button>
-        </ButtonGroup>
-        <ButtonGroup color="secondary" aria-label="outlined secondary button group">
-          <Button>normal</Button>
-          <Button>outlined</Button>
-          <Button>secondary</Button>
-        </ButtonGroup>
-        <ButtonGroup size="large" color="primary" aria-label="large outlined primary button group">
-          <Button>large</Button>
-          <Button>outlined</Button>
-          <Button>primary</Button>
-        </ButtonGroup>
+        {generateButtonGroup('small','primary', 'outlined')}
+        {generateButtonGroup('small','default', 'contained')}
+        {generateButtonGroup('small','secondary', 'text')}
+        {generateButtonGroup('medium','secondary', 'outlined')}
+        {generateButtonGroup('medium','default', 'contained')}
+        {generateButtonGroup('medium','primary', 'text')}
+        {generateButtonGroup('large','default', 'outlined')}
+        {generateButtonGroup('large','secondary', 'contained')}
+        {generateButtonGroup('large','primary', 'text')}
       </MuiInputContainer>
       <Typography variant="h5" gutterBottom>
       Button Orientations
       </Typography>
       <MuiInputContainer>
-        <ButtonGroup
-          orientation="vertical"
-          color="primary"
-          aria-label="vertical outlined primary button group"
-        >
-          <Button>vertical</Button>
-          <Button>outlined</Button>
-          <Button>primary</Button>
-        </ButtonGroup>
-        <ButtonGroup
-          orientation="vertical"
-          color="primary"
-          aria-label="vertical contained primary button group"
-          variant="contained"
-        >
-          <Button>vertical</Button>
-          <Button>contained</Button>
-          <Button>primary</Button>
-        </ButtonGroup>
-        <ButtonGroup
-          orientation="vertical"
-          color="primary"
-          aria-label="vertical text primary button group"
-          variant="text"
-        >
-          <Button>vertical</Button>
-          <Button>contained</Button>
-          <Button>text</Button>
-        </ButtonGroup>
+        {generateButtonGroup('medium','primary', 'outlined', 'vertical')}
+        {generateButtonGroup('medium','primary', 'contained', 'vertical')}
+        {generateButtonGroup('medium','primary', 'text', 'vertical')}
       </MuiInputContainer>
       <Typography variant="h5" gutterBottom>
       Floating Buttons

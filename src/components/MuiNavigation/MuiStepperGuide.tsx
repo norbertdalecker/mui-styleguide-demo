@@ -24,7 +24,7 @@ export const MuiStepperGuide = () => {
       <MuiInputContainer>
       {['horizontal', 'vertical'].map((variant: Orientation) => {
       return (
-      <Stepper key={variant} activeStep={4} orientation={variant}>
+      <Stepper style={{flexWrap: 'wrap'}} key={variant} activeStep={4} orientation={variant}>
         {steps.map((label, index) => {
           const stepProps: { completed?: boolean } = {};
           const labelProps: { optional?: React.ReactNode; error?: boolean } = {};

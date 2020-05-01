@@ -10,7 +10,7 @@ import { MuiNavigationGuide } from 'components/MuiNavigation';
 
 export const MuiStyleGuide = () => {
   return (
-    <Container maxWidth="lg">
+    <Container>
       <Paper style={{padding: '24px 16px 24px 16px'}}>
         <MuiPaletteGuide/>
         <MuiTypographyGuide/>

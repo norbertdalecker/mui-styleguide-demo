@@ -9,8 +9,12 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(3),
       marginBottom: theme.spacing(3),
       textAlign: 'center',
+      lineBreak: 'normal',
+      wordBreak: 'break-all',
       '& > *': {
         margin: theme.spacing(1),
+        flexWrap: 'wrap',
+        height: 'auto',
       },
     }
   }),

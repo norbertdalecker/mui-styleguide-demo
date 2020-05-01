@@ -1,15 +1,26 @@
 import * as React from "react";
-import { Drawer, Toolbar, ListItem, ListItemText, List, makeStyles, Theme, createStyles } from '@material-ui/core';
+import { Drawer, ListItem, ListItemText, List, makeStyles, Theme, createStyles } from '@material-ui/core';
 
 const drawerWidth = 200;
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     drawer: {
       width: drawerWidth,
-      flexShrink: 0,
+      position: 'sticky',
+      height: '100vh',
+      top: '64px',
+      [theme.breakpoints.down('sm')]:{
+        width: 0,
+        visibility: 'collapse'
+      }
     },
     drawerPaper: {
       width: drawerWidth,
+      top: '64px',
+      [theme.breakpoints.down('sm')]:{
+        width: 0,
+        visibility: 'collapse'
+      }
     },
     drawerContainer: {
       overflow: 'auto',
@@ -37,7 +48,6 @@ export const AppMenu = () => {
           paper: classes.drawerPaper,
         }}
       >
-        <Toolbar />
         <div className={classes.drawerContainer}>
           <List>
             {['Palette', 'Typography', 'Inputs',

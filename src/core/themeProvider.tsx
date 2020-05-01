@@ -7,6 +7,14 @@ const base: ThemeOptions = {
   },
   spacing: 8,
   overrides: {
+    MuiButtonGroup:{
+      root:{
+        ['@media (max-width: 600px)']: {
+          flexDirection: 'column',
+        },
+
+      }
+    },
     MuiDivider:{
       root:{
         marginBottom: 24,

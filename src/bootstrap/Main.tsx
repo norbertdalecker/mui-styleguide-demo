@@ -1,14 +1,15 @@
 import * as React from "react";
 import { hot } from 'react-hot-loader';
-import {ThemeProvider, createMuiTheme, CssBaseline} from '@material-ui/core';
+import {ThemeProvider, createMuiTheme, CssBaseline, responsiveFontSizes} from '@material-ui/core';
 import {lightTheme, darkTheme} from 'core/themeProvider';
 import { Home } from 'pages';
 import { useState } from 'react';
 import { AppHeader } from 'components/AppHeader';
 import { AppMenu } from 'components/AppMenu';
+import { AppFooter } from 'components/AppFooter';
 
-const light = createMuiTheme(lightTheme);
-const dark = createMuiTheme(darkTheme);
+const light = responsiveFontSizes(createMuiTheme(lightTheme));
+const dark = responsiveFontSizes(createMuiTheme(darkTheme));
 
 const Main = (_) => {
   const [useDark, setDark] = useState(false);
@@ -16,8 +17,11 @@ const Main = (_) => {
    <ThemeProvider theme={useDark? dark : light}>
     <CssBaseline/>
     <AppHeader toggleDark={() => {setDark(!useDark)}}/>
-    <AppMenu/>
-    <Home/>
+    <div style={{display: 'flex'}}>
+          <AppMenu/>
+          <Home/>
+        </div>
+    <AppFooter/>
    </ThemeProvider>
 )};
 

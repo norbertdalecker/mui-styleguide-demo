@@ -1,5 +1,5 @@
 import * as React from "react";
-import { MuiStyleGuide } from 'components/MuiStyleGuide';
+import { MuiStyleGuide } from 'mui-styleguide';
 
 
 export const Home = () => {
